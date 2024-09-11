@@ -10,6 +10,7 @@ describe('schema', function() {
     var cert_secp256k1_priv = fs.readFileSync(__dirname + '/secp256k1-private.pem');
     var cert_secp384r1_priv = fs.readFileSync(__dirname + '/secp384r1-private.pem');
     var cert_secp521r1_priv = fs.readFileSync(__dirname + '/secp521r1-private.pem');
+    var cert_ed25519_priv = fs.readFileSync(__dirname + '/ed25519-private.pem');
 
     function sign(options, secretOrPrivateKey) {
       jwt.sign({foo: 123}, secretOrPrivateKey, options);
@@ -30,6 +31,7 @@ describe('schema', function() {
       sign({algorithm: 'ES256K'}, cert_secp256k1_priv);
       sign({algorithm: 'ES384'}, cert_secp384r1_priv);
       sign({algorithm: 'ES512'}, cert_secp521r1_priv);
+      sign({algorithm: 'EdDSA'}, cert_ed25519_priv);
       sign({algorithm: 'HS256'}, 'superSecret');
       sign({algorithm: 'HS384'}, 'superSecret');
       sign({algorithm: 'HS512'}, 'superSecret');
