@@ -7,6 +7,7 @@ describe('schema', function() {
   describe('sign options', function() {
     var cert_rsa_priv = fs.readFileSync(__dirname + '/rsa-private.pem');
     var cert_ecdsa_priv = fs.readFileSync(__dirname + '/ecdsa-private.pem');
+    var cert_secp256k1_priv = fs.readFileSync(__dirname + '/secp256k1-private.pem');
     var cert_secp384r1_priv = fs.readFileSync(__dirname + '/secp384r1-private.pem');
     var cert_secp521r1_priv = fs.readFileSync(__dirname + '/secp521r1-private.pem');
 
@@ -26,6 +27,7 @@ describe('schema', function() {
       sign({algorithm: 'PS384'}, cert_rsa_priv);
       sign({algorithm: 'PS512'}, cert_rsa_priv);
       sign({algorithm: 'ES256'}, cert_ecdsa_priv);
+      sign({algorithm: 'ES256K'}, cert_secp256k1_priv);
       sign({algorithm: 'ES384'}, cert_secp384r1_priv);
       sign({algorithm: 'ES512'}, cert_secp521r1_priv);
       sign({algorithm: 'HS256'}, 'superSecret');

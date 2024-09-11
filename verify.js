@@ -7,7 +7,7 @@ const validateAsymmetricKey = require('./lib/validateAsymmetricKey');
 const crypto = require("crypto");
 const oneShotAlgs = require('./lib/oneShotAlgs');
 
-const EC_KEY_ALGS = ['ES256', 'ES384', 'ES512'];
+const EC_KEY_ALGS = ['ES256', 'ES256K', 'ES384', 'ES512'];
 const RSA_KEY_ALGS = ['RS256', 'RS384', 'RS512'];
 const RSA_PSS_KEY_ALGS = ['PS256', 'PS384', 'PS512'];
 const PUB_KEY_ALGS = [].concat(RSA_KEY_ALGS, EC_KEY_ALGS);
