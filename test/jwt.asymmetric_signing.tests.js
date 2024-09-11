@@ -21,6 +21,11 @@ const algorithms = {
     pub_key: loadKey('ecdsa-public.pem'),
     invalid_pub_key: loadKey('ecdsa-public-invalid.pem')
   },
+  ES256K: {
+    priv_key: loadKey('secp256k1-private.pem'),
+    pub_key: loadKey('secp256k1-public.pem'),
+    invalid_pub_key: loadKey('secp256k1-public-invalid.pem')
+  },
   PS256: {
     pub_key: loadKey('pub.pem'),
     priv_key: loadKey('priv.pem'),
