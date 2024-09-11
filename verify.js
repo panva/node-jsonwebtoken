@@ -12,6 +12,7 @@ const RSA_KEY_ALGS = ['RS256', 'RS384', 'RS512'];
 const RSA_PSS_KEY_ALGS = ['PS256', 'PS384', 'PS512'];
 const PUB_KEY_ALGS = [].concat(RSA_KEY_ALGS, EC_KEY_ALGS);
 const HS_ALGS = ['HS256', 'HS384', 'HS512'];
+const EdDSA_ALGS = ['EdDSA'];
 
 function processPayload(header, payload, signature, options, done) {
   const clockTimestamp = options.clockTimestamp || Math.floor(Date.now() / 1000);
@@ -224,6 +225,12 @@ module.exports = function(jwtString, secretOrPublicKey, options, callback) {
           break;
         case 'ec':
           options.algorithms = EC_KEY_ALGS;
+          break;
+        case 'ed25519':
+          options.algorithms = [].concat(EdDSA_ALGS, 'Ed25519');
+          break;
+        case 'ed448':
+          options.algorithms = [].concat(EdDSA_ALGS, 'Ed448');
           break;
         default:
           options.algorithms = PUB_KEY_ALGS;

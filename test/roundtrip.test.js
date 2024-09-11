@@ -14,6 +14,8 @@ for (const [alg, opts] of [
   ["ES256K"],
   ["ES384"],
   ["ES512"],
+  ["EdDSA", { crv: "Ed25519" }],
+  ["EdDSA", { crv: "Ed448" }],
 ]) {
   const conditionalDescribe =
     parseInt(process.versions.node, 10) >= 18 ? describe : describe.skip;

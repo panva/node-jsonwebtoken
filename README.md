@@ -144,9 +144,11 @@ As mentioned in [this comment](https://github.com/auth0/node-jsonwebtoken/issues
 * `algorithms`: List of strings with the names of the allowed algorithms. For instance, `["HS256", "HS384"]`. 
   > If not specified a defaults will be used based on the type of key provided
   > * secret - ['HS256', 'HS384', 'HS512']
-  > * rsa - ['RS256', 'RS384', 'RS512']
-  > * ec - ['ES256', 'ES384', 'ES512']
-  > * default - ['RS256', 'RS384', 'RS512']
+  > * rsa - ['RS256', 'RS384', 'RS512', 'PS256', 'PS384', 'PS512']
+  > * rsa-pss - ['PS256', 'PS384', 'PS512']
+  > * ec - ['ES256', 'ES256K', 'ES384', 'ES512']
+  > * ed25519 - ['EdDSA', 'Ed25519']
+  > * ed448 - ['EdDSA', 'Ed448']
 * `audience`: if you want to check audience (`aud`), provide a value here. The audience can be checked against a string, a regular expression or a list of strings and/or regular expressions. 
   > Eg: `"urn:foo"`, `/urn:f[o]{2}/`, `[/urn:f[o]{2}/, "urn:bar"]`
 * `complete`: return an object with the decoded `{ payload, header, signature }` instead of only the usual content of the payload.
@@ -370,6 +372,9 @@ Array of supported algorithms. The following algorithms are currently supported.
 | ES256               | ECDSA using P-256 curve and SHA-256 hash algorithm                     |
 | ES384               | ECDSA using P-384 curve and SHA-384 hash algorithm                     |
 | ES512               | ECDSA using P-521 curve and SHA-512 hash algorithm                     |
+| EdDSA (deprecated)  | EdDSA using Ed25519 or Ed448                                           |
+| Ed25519             | EdDSA using Ed25519                                                    |
+| Ed448               | EdDSA using Ed448                                                      |
 | none                | No digital signature or MAC value included                             |
 
 ## Refreshing JWTs
