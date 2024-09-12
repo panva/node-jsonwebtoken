@@ -1,13 +1,7 @@
 # jsonwebtoken
 
-| **Build**                                                                                                                               | **Dependency**                                                                                                         |
-|-----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| [![Build Status](https://secure.travis-ci.org/auth0/node-jsonwebtoken.svg?branch=master)](http://travis-ci.org/auth0/node-jsonwebtoken) | [![Dependency Status](https://david-dm.org/auth0/node-jsonwebtoken.svg)](https://david-dm.org/auth0/node-jsonwebtoken) |
-
 
 An implementation of [JSON Web Tokens](https://tools.ietf.org/html/rfc7519).
-
-This was developed against `draft-ietf-oauth-json-web-token-08`. It makes use of [node-jws](https://github.com/brianloveswords/node-jws)
 
 # Install
 
